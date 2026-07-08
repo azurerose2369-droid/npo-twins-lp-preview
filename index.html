@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+  NPO法人 健康と安心 子育てを進める市民活動ツインズ LP（草案）
+  画像差し替え：assets/ に生成画像を置き、各 .ph（プレースホルダー）を
+  コメント内の <img> タグに置き換える。プロンプトは ../image_prompts.md
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPO法人 健康と安心 子育てを進める市民活動ツインズ｜こどもの育ちを地域で支える</title>
+<meta name="description" content="小さな芽を、まちのみんなで、大きな木に。大阪府箕面市を拠点に北摂エリアで、小児看護の専門家と保育のベテラン、双子の姉妹が中心となって、こどもの育ちを地域で支える市民活動です。">
+<meta name="robots" content="noindex, nofollow">
+<!-- OGP：公開時にURL・画像を設定
+<meta property="og:title" content="NPO法人 健康と安心 子育てを進める市民活動ツインズ">
+<meta property="og:description" content="小さな芽を、まちのみんなで、大きな木に。">
+<meta property="og:image" content="assets/ogp.jpg">（ogp.jpg 生成済み。公開時は絶対URLに）
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-deep:#2E6B34;   /* 見出し・ボタン（白文字OK） */
+  --green-leaf:#AED581;   /* 装飾のみ */
+  --green-pale:#E8F2DF;
+  --cream:#FFF8E7;
+  --ink:#3E3A33;
+  --brown:#795548;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.9;
+  font-size:16px;
+}
+h1,h2,h3{font-family:'Zen Maru Gothic',sans-serif;color:var(--green-deep);line-height:1.5}
+img{max-width:100%;height:auto;display:block}
+a:focus-visible,button:focus-visible{outline:3px solid var(--green-deep);outline-offset:3px}
+.inner{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.sec-title{font-size:1.7rem;text-align:center;margin-bottom:12px}
+.sec-lead{text-align:center;margin-bottom:40px;color:var(--brown)}
+
+/* ヘッダー */
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(255,248,231,.95);
+  border-bottom:1px solid var(--green-leaf);
+  padding:10px 0;
+}
+.header-in{max-width:960px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;color:var(--green-deep);font-size:1.02rem;text-decoration:none}
+.logo small{display:block;font-size:.82rem;font-weight:500;color:var(--brown);letter-spacing:.04em}
+nav a{color:var(--green-deep);text-decoration:none;font-size:.88rem;margin-left:18px;font-weight:500}
+nav a:hover{text-decoration:underline}
+
+/* ヒーロー */
+.hero{padding:64px 0 72px;background:linear-gradient(180deg,var(--green-pale) 0%,var(--cream) 100%)}
+.hero-in{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:2.1rem;margin-bottom:20px}
+.hero p{margin-bottom:28px}
+.btn{
+  display:inline-block;background:var(--green-deep);color:var(--white);
+  font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+  padding:14px 34px;border-radius:999px;text-decoration:none;
+  box-shadow:0 3px 0 rgba(46,107,52,.35);transition:transform .15s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--white);color:var(--green-deep);border:2px solid var(--green-deep);box-shadow:none;margin-left:12px}
+
+/* 画像プレースホルダー */
+.ph{
+  background:var(--green-pale);border:2px dashed var(--green-leaf);
+  border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:var(--brown);font-size:.82rem;text-align:center;gap:8px;padding:16px;
+}
+.ph svg{width:56px;height:56px}
+.ph-wide{aspect-ratio:16/9}
+.ph-sq{aspect-ratio:1/1}
+.img-r{width:100%;border-radius:16px;box-shadow:0 2px 12px rgba(62,58,51,.08)}
+.card-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-bottom:2px solid var(--green-pale)}
+.twin-img{width:100%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:0 auto 18px;display:block}
+
+/* 想い：3ステップ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.step{background:var(--white);border-radius:16px;padding:28px 20px;text-align:center;box-shadow:0 2px 10px rgba(62,58,51,.06)}
+.step svg{width:64px;height:64px;margin:0 auto 12px}
+.step h3{font-size:1.1rem;margin-bottom:8px}
+.step p{font-size:.9rem;text-align:left}
+
+/* ふたりの物語 */
+.story{background:var(--white)}
+.twins{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.twin{background:var(--green-pale);border-radius:16px;padding:28px;text-align:center}
+.twin .ph{background:var(--cream);margin:0 auto 18px;max-width:220px;border-radius:50%;aspect-ratio:1/1}
+.twin h3{font-size:1.15rem}
+.twin .role{color:var(--brown);font-size:.85rem;font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+.twin p{font-size:.92rem;text-align:left;margin-top:10px}
+.story-note{max-width:720px;margin:36px auto 0;text-align:center}
+
+/* 活動 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(62,58,51,.06)}
+.card .ph{border-radius:0;border:none;border-bottom:2px solid var(--green-pale)}
+.card-body{padding:20px 22px 26px}
+.card h3{font-size:1.05rem;margin-bottom:8px}
+.card p{font-size:.9rem}
+
+/* 参加 */
+.join{background:linear-gradient(180deg,var(--cream) 0%,var(--green-pale) 100%)}
+.join-ways{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:36px 0}
+.way{background:var(--white);border-radius:16px;padding:24px;text-align:center}
+.way h3{font-size:1.02rem;margin-bottom:8px}
+.way p{font-size:.88rem;text-align:left}
+
+/* お問い合わせ */
+.contact{text-align:center}
+.contact .box{background:var(--white);border-radius:20px;padding:48px 24px;box-shadow:0 2px 10px rgba(62,58,51,.06)}
+
+/* あおば（DX推進担当）紹介カード：AOBA AI ブランドのブルーグリーンをひと差し */
+.aoba{max-width:560px;margin:0 auto 28px;background:#F4FBFB;border:1px solid #B8EAF9;border-radius:16px;padding:24px 28px;text-align:center}
+.aoba .aoba-img{width:104px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:0 auto 12px;display:block;border:3px solid #B8EAF9}
+.aoba .aoba-role{color:#15706B;font-weight:700;font-size:.85rem;letter-spacing:.08em}
+.aoba .aoba-name{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;color:#15706B;font-size:1.25rem;margin:4px 0 10px}
+.aoba .aoba-name small{font-size:.85rem;font-weight:500;color:var(--brown);display:block;margin-top:2px}
+.aoba p.aoba-desc{font-size:.92rem;text-align:left;margin:0}
+.aoba .aoba-portfolio{font-size:.85rem;margin-top:14px;text-align:center}
+.aoba .aoba-portfolio a{color:#15706B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.aoba .aoba-portfolio small{color:var(--brown);font-weight:500}
+
+footer{background:var(--green-deep);color:var(--white);text-align:center;padding:28px 20px;font-size:.82rem;line-height:1.7}
+
+@media (max-width:768px){
+  section{padding:52px 0}
+  .hero-in{grid-template-columns:1fr}
+  .hero h1{font-size:1.55rem}
+  .steps,.twins,.cards,.join-ways{grid-template-columns:1fr}
+  nav a{margin-left:12px;font-size:.82rem}
+  .btn.ghost{margin-left:0;margin-top:10px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-in">
+    <a href="#" class="logo">市民活動ツインズ<small>NPO法人 健康と安心 子育てを進める市民活動ツインズ</small></a>
+    <nav aria-label="ページ内メニュー">
+      <a href="#omoi">私たちの想い</a>
+      <a href="#futari">ふたりの物語</a>
+      <a href="#katsudo">活動内容</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- 1. ヒーロー -->
+<div class="hero">
+  <div class="inner hero-in">
+    <div>
+      <h1>小さな芽を、<br>まちのみんなで、<br>大きな木に。</h1>
+      <p>こどもは、まちに芽生えた小さな芽。<br>
+      わたしたちは、まわりの大人みんなで大切に、<br>
+      大きな木になるまで優しく見守る市民活動です。</p>
+      <a class="btn" href="#omoi">私たちの想いを見る</a><a class="btn ghost" href="#contact">お問い合わせ</a>
+    </div>
+    <img class="img-r" src="assets/hero.jpg" alt="土から出た小さな芽を、大人たちの手が周りからそっと包んでいる水彩イラスト">
+  </div>
+</div>
+
+<!-- 2. 私たちの想い -->
+<section id="omoi">
+  <div class="inner">
+    <h2 class="sec-title">私たちの想い</h2>
+    <p class="sec-lead">こどもの育ちを、地域で支える。</p>
+    <div class="steps">
+      <div class="step">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 54V38" stroke="#2E6B34" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M32 40c0-7-5-10-11-10 0 7 5 10 11 10zm0-4c0-7 5-11 11-11 0 7-5 11-11 11z" fill="#7CB342"/></svg>
+        <h3>芽ばえる</h3>
+        <p>うまれてきた小さないのち。はじめての子育てに、不安はつきものです。ひとりで抱えこまなくていいように、身近な相談相手になります。</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56V26" stroke="#795548" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M32 30c-2-8-8-11-15-11 1 8 7 12 15 11zm0-6c2-8 8-12 15-12-1 9-7 13-15 12zm0 14c-2-6-6-8-11-8 1 6 5 9 11 8z" fill="#7CB342"/></svg>
+        <h3>そだつ</h3>
+        <p>あそび、まなび、人とかかわりながら、こどもはぐんぐん育ちます。家庭だけでなく、地域の中に安心して育つ場所をつくります。</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 58V34" stroke="#795548" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32" cy="24" r="16" fill="#7CB342"/><circle cx="20" cy="32" r="9" fill="#AED581"/><circle cx="44" cy="32" r="9" fill="#AED581"/></svg>
+        <h3>ひろがる</h3>
+        <p>大きく育った木は、こんどはだれかの木陰になります。支えられて育った経験が、次のこどもたちを見守る力へつながっていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ふたりの物語 -->
+<section id="futari" class="story">
+  <div class="inner">
+    <h2 class="sec-title">ふたりの物語</h2>
+    <p class="sec-lead">「健康」と「安心」、ふたつの専門性。</p>
+    <p style="max-width:720px;margin:0 auto;">活動の中心にいるのは、シニアの一卵性双生児のふたり。団体名の「ツインズ」は、ここから生まれました。長い歳月をそれぞれの現場で歩んできたふたりが、いままた力を合わせて、まちの子育てを支えます。</p>
+    <div class="twins">
+      <div class="twin">
+        <img class="twin-img" src="assets/twin_satoko.jpg" style="object-position:center 22%" alt="本を抱えたさとこさんの水彩イラスト">
+        <p class="role">こどもの「健康」を</p>
+        <h3>SATOKO<small>（仮・担当分け要確認）</small></h3>
+        <p>大学で小児看護を教える教授として、こどものからだと心の健康を長年見つめてきました。医療と家庭のあいだに立ち、専門的な知見でご家族を支えます。</p>
+      </div>
+      <div class="twin">
+        <img class="twin-img" src="assets/twin_achan.jpg" style="object-position:center 22%" alt="エプロン姿でぬいぐるみを抱えたAちゃんさんの水彩イラスト">
+        <p class="role">こどもの「安心」を</p>
+        <h3>Aちゃん<small>（仮・担当分け要確認）</small></h3>
+        <p>保育の現場ひと筋、保育園の園長として、数えきれないこどもたちと家族の毎日に寄り添ってきました。培った経験で、安心できる居場所をつくります。</p>
+      </div>
+    </div>
+    <p class="story-note">看護学の知と、保育の実践知。<br><strong>ふたつがそろっているから、こどもの育ちをまるごと支えられる。</strong></p>
+    <p style="text-align:center;font-size:.82rem;color:var(--brown);margin-top:16px">※お二人の画像はイラストによる仮のものです。実際のお写真に差し替え予定です。</p>
+  </div>
+</section>
+
+<!-- 4. 活動内容（仮テキスト） -->
+<section id="katsudo">
+  <div class="inner">
+    <h2 class="sec-title">活動内容</h2>
+    <p class="sec-lead">箕面市を拠点に、北摂エリアで活動しています（2019年 箕面市長賞受賞※要確認）<br>※説明文は現サイトを元にした下書きです</p>
+    <div class="cards">
+      <div class="card">
+        <img class="card-img" src="assets/act_dance.jpg" alt="ダンススタジオで先生と一緒にヒップホップを練習するこどもたちの水彩イラスト">
+        <div class="card-body"><h3>ダンス教室<br><small>DANCE SCHOOL TWINS</small></h3><p>HIP HOPを中心とした、本格ストリートダンスの教室。ダンスコンテストで優勝経験のある現役ダンサーの先生（※要確認）から、こどもも大人も楽しく、かっこよく学べます。オンライン・提携会場・動画配信の3スタイル。</p>
+        <p style="font-size:.82rem;color:var(--brown);margin-top:10px">月4,000円〜（月4回）｜入会金無料｜夕方クラス開講中</p>
+        <p style="font-size:.82rem;margin-top:10px"><a href="https://npotwins.localinfo.jp/pages/809669/menu" style="color:var(--green-deep)">スケジュール・料金のくわしい案内</a></p></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets/act_tentoumushi.jpg" alt="てんとうむしの飾りがある明るい部屋で遊ぶ親子の水彩イラスト">
+        <div class="card-body"><h3>てんとうむし広場</h3><p>就学前（主に0〜3歳）のお子さんと保護者が、安心して遊んで過ごせるひろば。保健師さんや心理士さんが来る日もあり、人とのつながり、子育ての情報や相談が生まれる子育て支援の場です（茨木市地域子育て支援）。</p>
+        <p style="font-size:.82rem;color:var(--brown);margin-top:10px">場所：大阪府茨木市｜開所：月〜金 9:00〜15:00｜参加無料</p>
+        <a class="btn" style="padding:10px 24px;font-size:.85rem;margin-top:12px" href="https://select-type.com/rsv/?id=mYCJVWLl3NM&amp;c_id=101999">ひろばの予約はこちら</a>
+        <p style="font-size:.82rem;margin-top:10px"><a href="https://tentou.amebaownd.com/pages/3524916/news" style="color:var(--green-deep)">今月の予定</a>｜<a href="https://tentou.amebaownd.com/pages/4038299/page_202007091327" style="color:var(--green-deep)">本日の空き状況</a>（毎朝9時更新）</p></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets/act_touchcare.jpg" alt="赤ちゃんへのタッチケアと高齢者への肩のケアをする女性たちの水彩イラスト">
+        <div class="card-body"><h3>タッチケア</h3><p>手のぬくもりで、こどもから高齢者まで心とからだをケアします。アロマやハンドクリーム作りなど、暮らしをあたためる企画も開催しています。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4.5 新しい取り組み（企画部・AI講座への枝分かれ導線） -->
+<section id="kikaku" class="story" style="padding:56px 0">
+  <div class="inner" style="text-align:center">
+    <h2 class="sec-title">新しい取り組み、はじまります</h2>
+    <p style="max-width:720px;margin:0 auto 28px">このたび<strong>企画部</strong>が発足し、デジタルの力で活動を広げるDX推進の取り組みが始まりました。<br>その第一歩として、地域のみなさまに向けた<strong>「AI講座」</strong>を準備しています。</p>
+    <div class="aoba">
+      <img class="aoba-img" src="assets/aoba.jpg" alt="白衣にブルーグリーンのインナー姿で紺のファイルを抱えた、あおばのイラスト">
+      <p class="aoba-role">企画部 DX推進担当</p>
+      <p class="aoba-name">あおば<small>AOBA AI／AIエージェントストラテジスト</small></p>
+      <p class="aoba-desc">AIとデジタルの力を、ツインズのあたたかい活動に寄り添うかたちで。ホームページづくりから地域向けのAI講座まで、「むずかしいことを、やさしく」をモットーに、新しい挑戦を企画・広報の面から支えます。</p>
+      <!-- 連結導線：ポートフォリオ公開URL確定後に href を差し替える -->
+      <p class="aoba-portfolio"><a href="#" aria-disabled="true">あおばの制作実績（ポートフォリオ）を見る</a><small>（公開準備中）</small></p>
+    </div>
+    <a class="btn ghost" href="#" aria-disabled="true" style="margin-left:0">AI講座のご案内（近日公開）</a>
+  </div>
+</section>
+
+<!-- 5. 参加・応援 -->
+<section class="join">
+  <div class="inner">
+    <h2 class="sec-title">見守る大人に、なりませんか</h2>
+    <p class="sec-lead">できることから、少しずつで大丈夫です。（※仮テキスト）</p>
+    <div class="join-ways">
+      <div class="way"><h3>会員になる</h3><p>活動を継続的に支える会員として、まちの子育てを一緒に見守ってください。</p></div>
+      <div class="way"><h3>ボランティアで</h3><p>行事のお手伝いや居場所の見守りなど、あなたの時間と経験を活かせます。</p></div>
+      <div class="way"><h3>寄付で応援</h3><p>いただいたご支援は、こどもたちの育ちを支える活動に大切に使います。</p></div>
+    </div>
+    <img class="img-r" src="assets/tree_community.jpg" alt="大きな木の下で遊ぶこどもたちを、親やシニアなど地域の大人たちが見守っている水彩イラスト">
+  </div>
+</section>
+
+<!-- 6. お問い合わせ -->
+<section id="contact" class="contact">
+  <div class="inner">
+    <div class="box">
+      <h2 class="sec-title">お問い合わせ</h2>
+      <p style="margin-bottom:28px">活動についてのご質問、参加・ご支援のご相談など、<br>どうぞお気軽にご連絡ください。</p>
+      <!-- 連絡先決定後に差し替え -->
+      <a class="btn" href="mailto:info@example.org">メールで問い合わせる（仮）</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  NPO法人 健康と安心 子育てを進める市民活動ツインズ（大阪府箕面市）<br>
+  &copy; 2026 Citizens' Activity TWINS
+</footer>
+
+</body>
+</html>
