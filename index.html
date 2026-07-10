@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <!--
   NPO法人 健康と安心 子育てを進める市民活動ツインズ LP（草案）
-  画像差し替え：assets/ に生成画像を置き、各 .ph（プレースホルダー）を
-  コメント内の <img> タグに置き換える。プロンプトは ../image_prompts.md
+  画像は assets/ 内の生成画像を使用中（プロンプトは ../image_prompts.md 参照）。
+  本文中の「仮」「要確認」等の表記は現フェーズでは意図的に残置中。
+  公開前の確認事項一覧は PUBLISH_CHECKLIST.md を参照。
 -->
 <html lang="ja">
 <head>
@@ -28,6 +29,9 @@
   --ink:#3E3A33;
   --brown:#795548;
   --white:#FFFFFF;
+  --aoba-bg:#F4FBFB;      /* あおばカード：AOBA AIブランドのブルーグリーン */
+  --aoba-border:#B8EAF9;
+  --aoba-teal:#15706B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,6 +49,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green-deep);outline
 section{padding:72px 0}
 .sec-title{font-size:1.7rem;text-align:center;margin-bottom:12px}
 .sec-lead{text-align:center;margin-bottom:40px;color:var(--brown)}
+.lead{max-width:720px;margin:0 auto}
+.note{font-size:.82rem;color:var(--brown)}
+.link{color:var(--green-deep)}
 
 /* ヘッダー */
 header{
@@ -72,17 +79,9 @@ nav a:hover{text-decoration:underline}
 }
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:var(--white);color:var(--green-deep);border:2px solid var(--green-deep);box-shadow:none;margin-left:12px}
+[aria-disabled="true"]{pointer-events:none;cursor:not-allowed;opacity:.55;filter:grayscale(.4)}
 
-/* 画像プレースホルダー */
-.ph{
-  background:var(--green-pale);border:2px dashed var(--green-leaf);
-  border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  color:var(--brown);font-size:.82rem;text-align:center;gap:8px;padding:16px;
-}
-.ph svg{width:56px;height:56px}
-.ph-wide{aspect-ratio:16/9}
-.ph-sq{aspect-ratio:1/1}
-.img-r{width:100%;border-radius:16px;box-shadow:0 2px 12px rgba(62,58,51,.08)}
+.img-r{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;box-shadow:0 2px 12px rgba(62,58,51,.08)}
 .card-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-bottom:2px solid var(--green-pale)}
 .twin-img{width:100%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:0 auto 18px;display:block}
 
@@ -97,7 +96,6 @@ nav a:hover{text-decoration:underline}
 .story{background:var(--white)}
 .twins{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
 .twin{background:var(--green-pale);border-radius:16px;padding:28px;text-align:center}
-.twin .ph{background:var(--cream);margin:0 auto 18px;max-width:220px;border-radius:50%;aspect-ratio:1/1}
 .twin h3{font-size:1.15rem}
 .twin .role{color:var(--brown);font-size:.85rem;font-weight:700;letter-spacing:.1em;margin-bottom:6px}
 .twin p{font-size:.92rem;text-align:left;margin-top:10px}
@@ -106,7 +104,6 @@ nav a:hover{text-decoration:underline}
 /* 活動 */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(62,58,51,.06)}
-.card .ph{border-radius:0;border:none;border-bottom:2px solid var(--green-pale)}
 .card-body{padding:20px 22px 26px}
 .card h3{font-size:1.05rem;margin-bottom:8px}
 .card p{font-size:.9rem}
@@ -123,14 +120,14 @@ nav a:hover{text-decoration:underline}
 .contact .box{background:var(--white);border-radius:20px;padding:48px 24px;box-shadow:0 2px 10px rgba(62,58,51,.06)}
 
 /* あおば（DX推進担当）紹介カード：AOBA AI ブランドのブルーグリーンをひと差し */
-.aoba{max-width:560px;margin:0 auto 28px;background:#F4FBFB;border:1px solid #B8EAF9;border-radius:16px;padding:24px 28px;text-align:center}
-.aoba .aoba-img{width:104px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:0 auto 12px;display:block;border:3px solid #B8EAF9}
-.aoba .aoba-role{color:#15706B;font-weight:700;font-size:.85rem;letter-spacing:.08em}
-.aoba .aoba-name{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;color:#15706B;font-size:1.25rem;margin:4px 0 10px}
+.aoba{max-width:560px;margin:0 auto 28px;background:var(--aoba-bg);border:1px solid var(--aoba-border);border-radius:16px;padding:24px 28px;text-align:center}
+.aoba .aoba-img{width:104px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:0 auto 12px;display:block;border:3px solid var(--aoba-border)}
+.aoba .aoba-role{color:var(--aoba-teal);font-weight:700;font-size:.85rem;letter-spacing:.08em}
+.aoba .aoba-name{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;color:var(--aoba-teal);font-size:1.25rem;margin:4px 0 10px}
 .aoba .aoba-name small{font-size:.85rem;font-weight:500;color:var(--brown);display:block;margin-top:2px}
 .aoba p.aoba-desc{font-size:.92rem;text-align:left;margin:0}
 .aoba .aoba-portfolio{font-size:.85rem;margin-top:14px;text-align:center}
-.aoba .aoba-portfolio a{color:#15706B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.aoba .aoba-portfolio a{color:var(--aoba-teal);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .aoba .aoba-portfolio small{color:var(--brown);font-weight:500}
 
 footer{background:var(--green-deep);color:var(--white);text-align:center;padding:28px 20px;font-size:.82rem;line-height:1.7}
@@ -205,7 +202,7 @@ footer{background:var(--green-deep);color:var(--white);text-align:center;padding
   <div class="inner">
     <h2 class="sec-title">ふたりの物語</h2>
     <p class="sec-lead">「健康」と「安心」、ふたつの専門性。</p>
-    <p style="max-width:720px;margin:0 auto;">活動の中心にいるのは、シニアの一卵性双生児のふたり。団体名の「ツインズ」は、ここから生まれました。長い歳月をそれぞれの現場で歩んできたふたりが、いままた力を合わせて、まちの子育てを支えます。</p>
+    <p class="lead">活動の中心にいるのは、シニアの一卵性双生児のふたり。団体名の「ツインズ」は、ここから生まれました。長い歳月をそれぞれの現場で歩んできたふたりが、いままた力を合わせて、まちの子育てを支えます。</p>
     <div class="twins">
       <div class="twin">
         <img class="twin-img" src="assets/twin_satoko.jpg" style="object-position:center 22%" alt="本を抱えたさとこさんの水彩イラスト">
@@ -221,7 +218,7 @@ footer{background:var(--green-deep);color:var(--white);text-align:center;padding
       </div>
     </div>
     <p class="story-note">看護学の知と、保育の実践知。<br><strong>ふたつがそろっているから、こどもの育ちをまるごと支えられる。</strong></p>
-    <p style="text-align:center;font-size:.82rem;color:var(--brown);margin-top:16px">※お二人の画像はイラストによる仮のものです。実際のお写真に差し替え予定です。</p>
+    <p class="note" style="text-align:center;margin-top:16px">※お二人の画像はイラストによる仮のものです。実際のお写真に差し替え予定です。</p>
   </div>
 </section>
 
@@ -234,15 +231,15 @@ footer{background:var(--green-deep);color:var(--white);text-align:center;padding
       <div class="card">
         <img class="card-img" src="assets/act_dance.jpg" alt="ダンススタジオで先生と一緒にヒップホップを練習するこどもたちの水彩イラスト">
         <div class="card-body"><h3>ダンス教室<br><small>DANCE SCHOOL TWINS</small></h3><p>HIP HOPを中心とした、本格ストリートダンスの教室。ダンスコンテストで優勝経験のある現役ダンサーの先生（※要確認）から、こどもも大人も楽しく、かっこよく学べます。オンライン・提携会場・動画配信の3スタイル。</p>
-        <p style="font-size:.82rem;color:var(--brown);margin-top:10px">月4,000円〜（月4回）｜入会金無料｜夕方クラス開講中</p>
-        <p style="font-size:.82rem;margin-top:10px"><a href="https://npotwins.localinfo.jp/pages/809669/menu" style="color:var(--green-deep)">スケジュール・料金のくわしい案内</a></p></div>
+        <p class="note" style="margin-top:10px">月4,000円〜（月4回）｜入会金無料｜夕方クラス開講中</p>
+        <p style="font-size:.82rem;margin-top:10px"><a class="link" href="https://npotwins.localinfo.jp/pages/809669/menu">スケジュール・料金のくわしい案内</a></p></div>
       </div>
       <div class="card">
         <img class="card-img" src="assets/act_tentoumushi.jpg" alt="てんとうむしの飾りがある明るい部屋で遊ぶ親子の水彩イラスト">
         <div class="card-body"><h3>てんとうむし広場</h3><p>就学前（主に0〜3歳）のお子さんと保護者が、安心して遊んで過ごせるひろば。保健師さんや心理士さんが来る日もあり、人とのつながり、子育ての情報や相談が生まれる子育て支援の場です（茨木市地域子育て支援）。</p>
-        <p style="font-size:.82rem;color:var(--brown);margin-top:10px">場所：大阪府茨木市｜開所：月〜金 9:00〜15:00｜参加無料</p>
+        <p class="note" style="margin-top:10px">場所：大阪府茨木市｜開所：月〜金 9:00〜15:00｜参加無料</p>
         <a class="btn" style="padding:10px 24px;font-size:.85rem;margin-top:12px" href="https://select-type.com/rsv/?id=mYCJVWLl3NM&amp;c_id=101999">ひろばの予約はこちら</a>
-        <p style="font-size:.82rem;margin-top:10px"><a href="https://tentou.amebaownd.com/pages/3524916/news" style="color:var(--green-deep)">今月の予定</a>｜<a href="https://tentou.amebaownd.com/pages/4038299/page_202007091327" style="color:var(--green-deep)">本日の空き状況</a>（毎朝9時更新）</p></div>
+        <p style="font-size:.82rem;margin-top:10px"><a class="link" href="https://tentou.amebaownd.com/pages/3524916/news">今月の予定</a>｜<a class="link" href="https://tentou.amebaownd.com/pages/4038299/page_202007091327">本日の空き状況</a>（毎朝9時更新）</p></div>
       </div>
       <div class="card">
         <img class="card-img" src="assets/act_touchcare.jpg" alt="赤ちゃんへのタッチケアと高齢者への肩のケアをする女性たちの水彩イラスト">
@@ -256,16 +253,16 @@ footer{background:var(--green-deep);color:var(--white);text-align:center;padding
 <section id="kikaku" class="story" style="padding:56px 0">
   <div class="inner" style="text-align:center">
     <h2 class="sec-title">新しい取り組み、はじまります</h2>
-    <p style="max-width:720px;margin:0 auto 28px">このたび<strong>企画部</strong>が発足し、デジタルの力で活動を広げるDX推進の取り組みが始まりました。<br>その第一歩として、地域のみなさまに向けた<strong>「AI講座」</strong>を準備しています。</p>
+    <p class="lead" style="margin-bottom:28px">このたび<strong>企画部</strong>が発足し、デジタルの力で活動を広げるDX推進の取り組みが始まりました。<br>その第一歩として、地域のみなさまに向けた<strong>「AI講座」</strong>を準備しています。</p>
     <div class="aoba">
       <img class="aoba-img" src="assets/aoba.jpg" alt="白衣にブルーグリーンのインナー姿で紺のファイルを抱えた、あおばのイラスト">
       <p class="aoba-role">企画部 DX推進担当</p>
-      <p class="aoba-name">あおば<small>AOBA AI／AIエージェントストラテジスト</small></p>
+      <p class="aoba-name">あおば<small>AOBA AI／AIエージェント構築者 × 看護学博士</small></p>
       <p class="aoba-desc">AIとデジタルの力を、ツインズのあたたかい活動に寄り添うかたちで。ホームページづくりから地域向けのAI講座まで、「むずかしいことを、やさしく」をモットーに、新しい挑戦を企画・広報の面から支えます。</p>
-      <!-- 連結導線：ポートフォリオ公開URL確定後に href を差し替える -->
-      <p class="aoba-portfolio"><a href="#" aria-disabled="true">あおばの制作実績（ポートフォリオ）を見る</a><small>（公開準備中）</small></p>
+      <!-- 連結導線：ポートフォリオ公開URL確定後に href を差し替える。aria-disabled中はhrefなし+tabindex=-1で不活性化 -->
+      <p class="aoba-portfolio"><a aria-disabled="true" tabindex="-1">あおばの制作実績（ポートフォリオ）を見る</a><small>（公開準備中）</small></p>
     </div>
-    <a class="btn ghost" href="#" aria-disabled="true" style="margin-left:0">AI講座のご案内（近日公開）</a>
+    <a class="btn ghost" aria-disabled="true" tabindex="-1" style="margin-left:0">AI講座のご案内（近日公開）</a>
   </div>
 </section>
 
